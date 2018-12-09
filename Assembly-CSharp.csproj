@@ -57,7 +57,10 @@
      <Compile Include="Assets\Script\CharacterSwitch.cs" />
      <Compile Include="Assets\Script\FishingFih.cs" />
      <Compile Include="Assets\Script\GameManager.cs" />
+     <Compile Include="Assets\Script\LaunchGameTime.cs" />
+     <Compile Include="Assets\Script\SwitchBack.cs" />
      <Compile Include="Assets\Script\TouchScreen.cs" />
+     <Compile Include="Assets\Script\WoldClockTime.cs" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>/Users/zoo4656/program/GitHub/gyobei2/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>
