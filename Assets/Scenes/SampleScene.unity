@@ -122,7 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 101442984}
   - component: {fileID: 101442983}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: b_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -443,7 +443,7 @@ GameObject:
   m_Component:
   - component: {fileID: 598851280}
   - component: {fileID: 598851279}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Desert
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -670,7 +670,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1141970142}
   - component: {fileID: 1141970141}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: b_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -809,7 +809,7 @@ GameObject:
   - component: {fileID: 1319983361}
   - component: {fileID: 1319983363}
   m_Layer: 0
-  m_Name: fishers
+  m_Name: AllFishImages
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
