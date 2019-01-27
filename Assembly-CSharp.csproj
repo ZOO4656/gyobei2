@@ -60,6 +60,7 @@
      <Compile Include="Assets\Script\FishPool.cs" />
      <Compile Include="Assets\Script\GameManager.cs" />
      <Compile Include="Assets\Script\LaunchGameTime.cs" />
+     <Compile Include="Assets\Script\SelectStage.cs" />
      <Compile Include="Assets\Script\SwitchBack.cs" />
      <Compile Include="Assets\Script\TouchStageSelect.cs" />
      <Compile Include="Assets\Script\WoldClockTime.cs" />
