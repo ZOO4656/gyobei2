@@ -5,8 +5,7 @@ using UnityEngine;
 public class SelectStage : MonoBehaviour {
 
 public GameObject desert;
-public GameObject sunny;
-public GameObject cloudy;
+public GameObject forest;
 
 	// Update is called once per frame
 	void Update () {
@@ -15,19 +14,11 @@ public GameObject cloudy;
 
 	public void selectDesert() {
 		desert.SetActive(true);
-		sunny.SetActive(false);
-		cloudy.SetActive(false);
+		forest.SetActive(false);
 	}
 
-	public void selectSunny() {
+	public void selectforest() {
 		desert.SetActive(false);
-		sunny.SetActive(true);
-		cloudy.SetActive(false);
-	}
-
-	public void selsectCloudy() {
-		desert.SetActive(false);
-		sunny.SetActive(false);
-		cloudy.SetActive(true);
+		forest.SetActive(true);
 	}
 }

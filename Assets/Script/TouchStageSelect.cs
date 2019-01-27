@@ -6,10 +6,12 @@ public class TouchStageSelect : MonoBehaviour {
 
 public bool pushStageSelect = false;
 
-
+//StageSelectWindowを非表示にするにはStageSelectButtunをもう一度押す
 public GameObject StageSelectWindow;
 public GameObject Stage1;
-public GameObject Stage2;
+
+//タッチ判定を持っているConfirmTachを制御
+public GameObject ConfirmTach;
 
 
 	// Use this for initialization
@@ -20,13 +22,13 @@ public GameObject Stage2;
 	// Update is called once per frame
 	void Update () {
 		if(pushStageSelect) {
+			ConfirmTach.SetActive(false);
 			StageSelectWindow.SetActive(true);
 			Stage1.SetActive(true);
-			Stage2.SetActive(true);
 		}else {
+			ConfirmTach.SetActive(true);
 			StageSelectWindow.SetActive(false);
 			Stage1.SetActive(false);
-			Stage2.SetActive(false);
 		}
 	}
 
