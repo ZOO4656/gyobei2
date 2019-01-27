@@ -25,10 +25,10 @@ public class CharacterSwitch : MonoBehaviour {
 			CharacterSet2.SetActive(true);
 			// Fish.SetActive(true);
 			if(this.generateFishLock) {
-				int fhishId = Random.Range(0,15);
-				//プレハブをGameObject型で取得
+				int fhishId = Random.Range(0,17);
+				//生成元のプレハブをGameObject型で取得
 				GameObject originFishingFish = (GameObject)Resources.Load ("Prefab/fish" + fhishId);
-				//プレイハブをもとにインスタンスを生成
+				//プレハブをもとにインスタンスを生成
 				this.fishingFish = Instantiate (originFishingFish, new Vector3(0.0f,0.0f,0.0f), Quaternion.identity);
 				this.generateFishLock = false;
 			}
@@ -43,9 +43,12 @@ public class CharacterSwitch : MonoBehaviour {
 		}
 
 	}
+
+		//画面を押しているかどうか
 		public void PushDown() {
 			pushDecision = true;
 		}
+		//画面からタップを離しているかどうか
 		public void PushUp() {
 			pushDecision = false;
 		}
