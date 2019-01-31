@@ -61,8 +61,9 @@
      <Compile Include="Assets\Script\GameManager.cs" />
      <Compile Include="Assets\Script\LaunchGameTime.cs" />
      <Compile Include="Assets\Script\SelectStage.cs" />
+     <Compile Include="Assets\Script\ShowDictionary.cs" />
+     <Compile Include="Assets\Script\ShowStageSelect.cs" />
      <Compile Include="Assets\Script\SwitchBack.cs" />
-     <Compile Include="Assets\Script\TouchStageSelect.cs" />
      <Compile Include="Assets\Script\WoldClockTime.cs" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>/Users/zoo4656/program/GitHub/gyobei2/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
