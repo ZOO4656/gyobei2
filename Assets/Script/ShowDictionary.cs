@@ -3,40 +3,40 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ShowDictionary : MonoBehaviour {
-
-
-private bool is_pushDictionary = false;
-
 public GameObject showDictionary;
 //StageSelectが表示されているかどうかを確認
 public GameObject selectWindow;
 
-// selectWindow.GetComponent<ShowStageSelect>().is_pushStageSelect;
+//タッチ判定を持っているConfirmTachを制御
+public GameObject ConfirmTouch;
 
 	// Use this for initialization
 	void Start () {
-		
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-		if(is_pushDictionary) {
-			if(selectWindow.activeSelf){
-				selectWindow.SetActive(false);
-			}
+		// if(is_pushDictionary) {
+		// 	if(showStageSelect.activeInHierarchy){
+		// 		showStageSelect.SetActive(false);
+		// 	}
 
-			showDictionary.SetActive(true);
-		}else{
-			showDictionary.SetActive(false);
-		}
+		// 	showDictionary.SetActive(true);
+		// 	Debug.Log("押された");
+		// }else{
+		// 	showDictionary.SetActive(false);
+		// }
 	}
 
 	//Dictionaryボタンを押してたかどうか
 	public void pushDictionary() {
-		if(is_pushDictionary == true) {
-			is_pushDictionary = false;
+		selectWindow.SetActive(false);
+		if(showDictionary.activeInHierarchy) {
+			ConfirmTouch.SetActive(true);
+			showDictionary.SetActive(false);
 		}else{
-			is_pushDictionary = true;
+			ConfirmTouch.SetActive(false);
+			showDictionary.SetActive(true);
 		}
 	}
 }
