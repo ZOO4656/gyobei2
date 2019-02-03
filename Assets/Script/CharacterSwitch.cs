@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 public class CharacterSwitch : MonoBehaviour {
 
@@ -9,9 +9,16 @@ public class CharacterSwitch : MonoBehaviour {
 	public GameObject CharacterSet1;
 	public GameObject CharacterSet2;
 
+	//釣れた魚を表示させるObject
+	//魚をアタッチしてはならない
 	public GameObject fishingFish;
 
-	public bool generateFishLock = true;	//魚の生成時の連続生成防止
+	public GameObject dictionaryWindow;
+
+	public GameObject forestStage;
+
+	//魚の生成時の連続生成防止
+	public bool generateFishLock = true;
 
 	//図鑑登録用のリスト
 	public List<int> fishlist;
@@ -20,9 +27,10 @@ public class CharacterSwitch : MonoBehaviour {
 	void Start () {
 		int[] a = {};
 		fishlist = new List<int>(a);
-		
+
+		// fish.gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>("Image/question");
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		if(pushDecision) {
@@ -30,7 +38,11 @@ public class CharacterSwitch : MonoBehaviour {
 			CharacterSet2.SetActive(true);
 			// Fish.SetActive(true);
 			if(this.generateFishLock) {
-				int fishId = Random.Range(0,17);
+				int fishId = Random.Range(0,16);
+				if(forestStage.activeInHierarchy) {
+					fishId = 16;
+				}
+
 				//生成元のプレハブをGameObject型で取得
 				GameObject originFishingFish = (GameObject)Resources.Load ("Prefab/fish" + fishId);
 				//プレハブをもとにインスタンスを生成
@@ -39,11 +51,24 @@ public class CharacterSwitch : MonoBehaviour {
 
 				//釣れた魚をリストに格納
 				fishlist.Add(fishId);
-				int[] f = fishlist.ToArray();
-				for(int i = 0; i < f.Length; i++) {
-					Debug.Log(f[i]);
+				int[] fishListIds = fishlist.ToArray();
+
+
+				Transform[] fishs = dictionaryWindow.GetComponentsInChildren<Transform>();
+				foreach(Transform fish in fishs) {
+					Debug.Log(fish.gameObject.name);
+					//ヒエラルキー中のnullとSpriteが無いデータ以外の画像をハテナにする
+					if(fish.gameObject.GetComponent<Image>() != null && fish.gameObject.GetComponent<Image>().sprite != null) {
+						//fishListIds配列の中身を変数fishIdに一つずつ格納
+						foreach(int fId in fishListIds) {
+							//魚の名前とIDが一致したら、図鑑の画像を差し替える
+							if(fish.gameObject.name == "Chara" + fId) {
+								fish.gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>("Image/fish" + fId);
+							}
+						}
+					}
 				}
-			}
+ 			}
 		}else {
 			CharacterSet1.SetActive(true);
 			CharacterSet2.SetActive(false);
